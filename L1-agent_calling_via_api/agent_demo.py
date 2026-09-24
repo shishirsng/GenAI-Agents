@@ -36,7 +36,9 @@ load_dotenv()  # Loads variables like OPENAI_API_KEY into environment
 # - Decide which tool to use
 # - Generate the final answer
 
-from langchain_openai import ChatOpenAI
+#from langchain_openai import ChatOpenAI
+from langchain_openrouter import ChatOpenRouter
+
 
 # OpenRouter speaks the same API "shape" as OpenAI, so we use the same
 # ChatOpenAI client, but point it at OpenRouter's URL and use an
@@ -46,11 +48,11 @@ from langchain_openai import ChatOpenAI
 # has credits for — see the full list at https://openrouter.ai/models
 # Examples: "openai/gpt-4o-mini", "anthropic/claude-3.5-haiku",
 #           "meta-llama/llama-3.1-8b-instruct"
-model = ChatOpenAI(
-    model="nvidia/nemotron-3.5-lightning:free",
-    #model="openai/gpt-4o-mini",
+model = ChatOpenRouter(
+    #model="nvidia/nemotron-3.5-lightning:free",
+    model="auto",
     api_key=os.getenv("OPENROUTER_API_KEY"),
-    base_url="https://openrouter.ai/api/v1",
+    # base_url="https://openrouter.ai/api/v1",
 )
 
 
