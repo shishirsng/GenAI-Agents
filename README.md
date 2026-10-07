@@ -1,5 +1,7 @@
 This is the Oracle course of Agentic AI
+
 _**this readme is not AI **_
+
 **L1:**
 
 In the lesson L1 I have learned tool calling, API key, Langchain and its some components
